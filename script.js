@@ -1,8 +1,8 @@
 
 const monografias = [
-  {titulo: "O Papel das Microfinanças no Empoderamento Económico", autor: "João Silva", curso: "Economia", ano: "2023", link: "https://drive.google.com/file/d/xxxx/view"},
-  {titulo: "Gestão de Recursos Humanos e Desenvolvimento Organizacional", autor: "Maria António", curso: "Gestão", ano: "2024", link: "https://drive.google.com/file/d/yyyy/view"},
-  {titulo: "Impacto da Cultura de Inovação no Crescimento de Empresas Familiares", autor: "Carlos Manuel", curso: "Finanças", ano: "2025", link: "https://drive.google.com/file/d/zzzz/view"}
+  {titulo: "O Papel das Microfinanças no Empoderamento Económico", autor: "João Silva", curso: "Economia", ano: "2023", link: "https://www.google.com"},
+  {titulo: "Gestão de Recursos Humanos e Desenvolvimento Organizacional", autor: "Maria António", curso: "Gestão de Empresas", ano: "2024", link: "https://www.google.com"},
+  {titulo: "Impacto da Cultura de Inovação no Crescimento de Empresas Familiares", autor: "Carlos Manuel", curso: "Contabilidade", ano: "2025", link: "https://www.google.com"}
 ];
 
 function pesquisar() {
