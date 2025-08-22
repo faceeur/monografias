@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositório de Monografias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    h2 {
+      margin: 5px 0 0;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    select, input {
+      padding: 8px;
+      margin: 5px 0 15px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #002147;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #003366;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .monografia {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .monografia a {
+      text-decoration: none;
+      color: #002147;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Universidade Rovuma</h1>
+    <h2>Faculdade de Ciências Económicas e Empresariais</h2>
+    <h2>Repositório de Monografias</h2>
+  </header>
+  <div class="container">
+    <h3>Pesquisar Monografias</h3>
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" placeholder="Digite o nome do autor">
+
+    <label for="curso">Curso:</label>
+    <select id="curso">
+      <option value="">-- Seleccione o curso --</option>
+      <option value="Economia">Economia</option>
+      <option value="Gestão">Gestão</option>
+      <option value="Finanças">Finanças</option>
+      <option value="Comércio Internacional">Comércio Internacional</option>
+    </select>
+
+    <label for="ano">Ano de Defesa:</label>
+    <select id="ano">
+      <option value="">-- Seleccione o ano --</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <div class="results" id="resultados"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
