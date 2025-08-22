@@ -2,17 +2,36 @@ let monografias = [];
 
 async function carregarMonografias() {
   try {
-    const resposta = await fetch("https://script.google.com/macros/s/SEU_ID/exec"); // substitua pelo seu link da Web App
+    const resposta = await fetch("https://script.google.com/macros/s/AKfycbyIUdmxfjU6QVbAmgutOjAsLvLHluNEOx5bsvYcB6bO_mxljfgNYmrwr-B-0IEt4-Phew/exec"); // substitua pelo link da sua Web App
     monografias = await resposta.json();
+
+    preencherAnos(); // <- novo: preenche anos após carregar monografias
   } catch (erro) {
     console.error("Erro ao carregar dados das monografias:", erro);
     document.getElementById("resultados").innerHTML = "<p>Erro ao carregar monografias.</p>";
   }
 }
 
+function preencherAnos() {
+  const selectAno = document.getElementById("ano");
+
+  // Limpa opções existentes e adiciona a padrão
+  selectAno.innerHTML = '<option value="">-- Seleccione o ano --</option>';
+
+  // Extrai anos únicos e ordena
+  const anosUnicos = [...new Set(monografias.map(m => m.ano))].sort();
+
+  anosUnicos.forEach(ano => {
+    const option = document.createElement("option");
+    option.value = ano;
+    option.textContent = ano;
+    selectAno.appendChild(option);
+  });
+}
+
 async function pesquisar() {
   if (monografias.length === 0) {
-    await carregarMonografias(); // carrega dados só uma vez
+    await carregarMonografias();
   }
 
   const autor = document.getElementById("autor").value.toLowerCase();
@@ -42,3 +61,6 @@ async function pesquisar() {
     resultadosDiv.appendChild(div);
   });
 }
+
+// Carrega monografias assim que a página carregar
+window.addEventListener("DOMContentLoaded", carregarMonografias);
